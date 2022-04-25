@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<link rel="stylesheet" href='styles.css'>
+<link rel="stylesheet"
+	href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,500,0,0" />
+<link rel="stylesheet"
+	href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
+<script src="song list.js" defer></script>
+<script src='main.js' defer></script>
+</head>
+<div class="music-player-container">
+	<div class="top-bar-container">
+		<span class="material-symbols-outlined"> expand_more </span>
+		<span id="header">Now Playing</span>
+		<span class="material-symbols-outlined"> menu </span>
+	</div>
+	<div class="img-container">
+		<img class="img" src="images/不能说的秘密.jpg" alt="Image">
+	</div>
+	<div class="song-info-container">
+		<div class="song-title"></div>
+		<div class="song-singer"></div>
+	</div>
+	<div class="progress-container">
+		<div class="progress-bar">
+		</div>
+		<audio id="audio" src=""></audio>
+	</div>
+	<div class="timer-container">
+		<div class="current-time"></div>
+		<div class="total-time"></div>
+	</div>
+	<div class="control-panel-container">
+		<span id='mode' class="material-symbols-outlined"> repeat </span>
+		<span id='prev' class="material-symbols-outlined big-icon"> skip_previous </span>
+		<span id='play-pause' class="material-symbols-outlined big-icon"> play_circle </span>
+		<span id='next' class="material-symbols-outlined big-icon"> skip_next </span>
+		<span id='list' class="material-symbols-outlined"> queue_music </span>
+	</div>
+	<div class="play-list-container">
+		<div class="header">
+			<span class="material-symbols-outlined"> queue_music </span>
+			<span id="music-list">Music list</span>
+			<span id="close" class="material-symbols-outlined"> close </span>
+		</div>
+		<ul class="list-wrapper">
+		</ul>
+	</div>
+</div>
+<div style="margin-top: 15px;">Designed and coded by Kevin Gu</div>
+</body>
+
+</html>

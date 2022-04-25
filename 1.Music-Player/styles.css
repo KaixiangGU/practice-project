@@ -1,0 +1,265 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+:root {
+  --lightblack: #515c6f;
+  --white: #fff;
+  --lightgrey: #bcbcbc;
+}
+
+body {
+  height: 100vh;
+  background: rgb(184, 175, 219);
+  background: linear-gradient(90deg, rgba(131, 96, 195, 1) 0%, rgba(46, 191, 145, 1) 100%);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.music-player-container {
+  width: 380px;
+  height: 65vh;
+  background-color: var(--white);
+  box-shadow: 0px 4px 8px 3px grey;
+  border-radius: 14px;
+  padding: 25px;
+  font-size: 20px;
+  font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.top-bar-container,
+.play-list-container .header,
+.play-list-container .list-wrapper .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-bar-container .material-symbols-outlined {
+  font-size: 1.5em;
+  color: var(--lightblack);
+}
+
+.top-bar-container #header {
+  font-family: "Roboto Slab", serif;
+}
+
+.img-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 50%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.img-container .img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 50%;
+  box-shadow: 0px 0px 25px 6px var(--lightgrey);
+  animation: 12s linear infinite rotate;
+  animation-play-state: paused;
+}
+
+.img-container .img.play {
+  animation-play-state: running;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.song-info-container {
+  text-align: center;
+}
+
+.song-info-container .song-title {
+  font-weight: normal;
+}
+
+.song-info-container .song-singer {
+  color: var(--lightblack);
+  font-size: 0.8em;
+}
+
+.progress-container {
+  width: 100%;
+  height: 6px;
+  background-color: var(--lightgrey);
+  border-radius: 50px;
+  margin-top: 20px;
+  cursor: pointer;
+  margin-bottom: 3px;
+}
+
+.progress-container .progress-bar {
+  width: 0px;
+  height: inherit;
+  border-radius: inherit;
+  background: linear-gradient(354deg, rgba(101, 78, 163, 1) 0%, rgba(234, 175, 200, 1) 100%);
+  position: relative;
+}
+
+.progress-bar::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  border-radius: inherit;
+  background: inherit;
+  position: absolute;
+  right: -7px;
+  transform: translateY(-25%);
+  opacity: 0;
+  transition: opacity 0.2s ease-in;
+}
+
+.progress-container:hover .progress-bar::before {
+  opacity: 1;
+}
+
+.timer-container {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.6em;
+  margin-bottom: 20px;
+}
+
+.control-panel-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.control-panel-container span {
+  font-size: 1.3em;
+  cursor: pointer;
+  background: linear-gradient(354deg, rgba(101, 78, 163, 1) 0%, rgba(234, 175, 200, 1) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.control-panel-container span.big-icon {
+  font-size: 2.8em;
+}
+
+.play-list-container {
+  width: 100%;
+  opacity: 1;
+  background-color: var(--white);
+  position: absolute;
+  bottom: -70%;
+  pointer-events: none;
+  left: 0px;
+  box-shadow: 0px 4px 8px 3px grey;
+  border-radius: 14px;
+  padding: inherit;
+  transition: bottom 0.15s ease-out;
+}
+
+/* use in javascript */
+.play-list-container.show {
+  bottom: 0;
+  pointer-events: auto;
+}
+
+.play-list-container .header {
+  margin-bottom: 10px;
+}
+
+.play-list-container .header #music-list {
+  margin-right: 50%;
+}
+
+.play-list-container .header #close {
+  cursor: pointer;
+}
+
+.play-list-container .list-wrapper {
+  max-height: 300px;
+  overflow: auto;
+}
+
+.play-list-container .list-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.play-list-container .list-wrapper .row {
+  font-size: 0.8em;
+  padding: 10px 0px;
+  border-bottom: 1px solid var(--lightgrey);
+  cursor: pointer;
+}
+
+.play-list-container .list-wrapper .row:last-child {
+  border-bottom: 0px;
+}
+
+.list-wrapper .row .list-info .list-singer {
+  font-size: 0.8em;
+  color: var(--lightblack);
+  margin-top: 5px;
+}
+
+.list-wrapper .row .hide-time {
+  display: none;
+}
+
+.wave-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 25px;
+  height: 30px;
+}
+
+.wave-container.hide-wave {
+  display: none;
+}
+
+.wave-container span {
+  width: 3px;
+  height: 80%;
+  border-radius: 0px;
+  background-color: rgb(15, 132, 15);
+  animation: wave 1.4s linear infinite;
+}
+
+@keyframes wave {
+  50% {
+    height: 20%;
+  }
+  100% {
+    height: 80%;
+  }
+}
+
+.wave-container .wave1 {
+  animation-delay: 0s;
+}
+.wave-container .wave2 {
+  animation-delay: -0.3s;
+}
+.wave-container .wave3 {
+  animation-delay: -0.6s;
+}
+.wave-container .wave4 {
+  animation-delay: -0.3s;
+}
+.wave-container .wave5 {
+  animation-delay: 0s;
+}
