@@ -1,0 +1,131 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+:root {
+  --cellsize: 100px;
+}
+body {
+  background-color: rgb(89, 172, 220);
+  position: relative;
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: center;
+  align-content: center;
+  gap: 3px;
+}
+
+.wrapper .cell {
+  background-color: white;
+  width: var(--cellsize);
+  height: var(--cellsize);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Cell Marker */
+.cell.x,
+.cell.o {
+  cursor: not-allowed;
+}
+
+/* Marker X and hover effect*/
+.cell.x::before,
+.cell.x::after,
+.wrapper.x .cell:not(.o):not(.x):hover::before,
+.wrapper.x .cell:not(.o):not(.x):hover::after {
+  content: "";
+  position: absolute;
+  background-color: black;
+  width: calc(var(--cellsize) * 0.1);
+  height: calc(var(--cellsize) * 0.8);
+  border-radius: 4px;
+}
+
+.cell.x::before,
+.wrapper.x .cell:not(.o):not(.x):hover::before {
+  transform: rotate(45deg);
+}
+
+.cell.x::after,
+.wrapper.x .cell:not(.o):not(.x):hover::after {
+  transform: rotate(-45deg);
+}
+
+/* Marker O and hover effect*/
+.cell.o::before,
+.cell.o::after,
+.wrapper.o .cell:not(.o):not(.x):hover::before,
+.wrapper.o .cell:not(.o):not(.x):hover::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+
+.cell.o::before,
+.wrapper.o .cell:not(.o):not(.x):hover::before {
+  background-color: black;
+  width: calc(var(--cellsize) * 0.7);
+  height: calc(var(--cellsize) * 0.7);
+}
+
+.cell.o::after,
+.wrapper.o .cell:not(.o):not(.x):hover::after {
+  background-color: rgb(255, 255, 255);
+  width: calc(var(--cellsize) * 0.55);
+  height: calc(var(--cellsize) * 0.55);
+}
+
+/* Hover Effect of display color*/
+.wrapper.o .cell:not(.o):not(.x):hover::before,
+.wrapper.x .cell:not(.o):not(.x):hover::before,
+.wrapper.x .cell:not(.o):not(.x):hover::after {
+  background-color: lightgrey;
+}
+
+/* Showing result */
+.black-background {
+  background-color: rgba(0, 0, 0, 0.9);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 5rem;
+  color: white;
+}
+
+.play-again-button {
+  font-size: 3.5rem;
+  padding: 10px;
+  border-radius: 6px;
+  border: 0px;
+  cursor: pointer;
+}
+
+.play-again-button:hover {
+  background-color: rgb(50, 201, 42);
+  color: white;
+}
+
+.black-background.show {
+  display: flex;
+}
+
+.footer {
+  text-align: center;
+}
