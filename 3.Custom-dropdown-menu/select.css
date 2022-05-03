@@ -1,0 +1,88 @@
+/* The following below are css for the custom select dropdown menu */
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  user-select: none;
+}
+
+body {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  height: 70vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 20px;
+  grid-column: span 2;
+  align-self: flex-end;
+}
+
+label {
+  font-size: 1.5rem;
+  margin-right: 15px;
+  justify-self: flex-end;
+  align-self: flex-start;
+}
+
+.custom-select-container {
+  width: 250px;
+  display: inline-block;
+  position: relative;
+  font-size: 1.2rem;
+  align-self: flex-start;
+}
+
+.custom-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 6px;
+  border: 1px solid black;
+  cursor: pointer;
+  background-color: rgb(15, 81, 86);
+  color: white;
+}
+
+.custom-label::after {
+  content: "";
+  display: inline-block;
+  border: 5px solid transparent;
+  border-top-color: black;
+  margin-top: 5px;
+}
+
+.custom-option-list-wrapper {
+  display: none;
+  position: absolute;
+  width: 100%;
+  border: 1px solid black;
+  border-top: 0px;
+  max-height: 350px;
+  overflow-y: scroll;
+  background-color: rgb(15, 81, 86);
+  color: white;
+}
+
+.custom-option-list-wrapper.show {
+  display: block;
+}
+
+.custom-option-list-element {
+  cursor: pointer;
+  padding: 6px;
+}
+
+.custom-option-list-element:hover {
+  background-color: rgb(164, 193, 235);
+}
+
+.custom-option-list-element.selected {
+  background-color: rgb(67, 120, 195);
+}
