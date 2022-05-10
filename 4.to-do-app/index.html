@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>to-do-app</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet"
+		href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.1/dayjs.min.js" defer></script>
+	<script src="script.js" defer></script>
+</head>
+
+<body>
+	<div class="todo-container" data-todo-container>
+		<img src="image/background.jpg" id="background-image">
+		<div class="background">
+			<div class="lists-button-wrapper">
+				<button class="lists-btn">
+					<span class="material-symbols-rounded" id="lists-btn" data-lists-btn> list </span>
+				</button>
+			</div>
+			<div class="header-time"></div>
+			<div class="header-date"></div>
+		</div>
+		<div class="todo-tasks-wrapper">
+			<div class="status-button-wrapper" data-status-btn-wrapper>
+				<button class="status-button all" data-all-btn>All</button>
+				<button class="status-button completed" data-complete-btn>Completed</button>
+				<button class="status-button incompleted" data-incomplete-btn>Incompleted</button>
+			</div>
+			<h2 class="list-title" data-list-title></h2>
+			<div class="tasks-content-wrapper" data-task-content-wrapper>
+			</div>
+		</div>
+		<button class="add-button" data-add-new-task-btn></button>
+		<div class="new-task-window" data-new-task-window>
+			<h3 class="new-task-window-header">Add a new task</h3>
+			<form>
+				<input type="text" class="new-task-input" id="new-task-description" placeholder="task description"
+					data-new-task-input>
+				<label for="new-task-description"></label>
+			</form>
+			<div class="new-task-btn-wrapper">
+				<button class="new-task-btn submit-btn" data-submit-new-task>Submit</button>
+				<button class="new-task-btn cancel-btn" data-cancel-new-task>Cancel</button>
+			</div>
+		</div>
+		<div class="lists-window" data-lists-window>
+			<h3 data-close-btn>My lists</h3>
+			<div class="lists-container">
+				<div class="input-wrapper">
+					<input type="text" class="new-list-input" placeholder="Add new list" data-list-input>
+					<button class="add-new-list-btn" data-add-list-btn>Add</button>
+				</div>
+				<ul class="lists-content-wrapper" data-lists-wrapper>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<template id="task-template">
+		<div class="task-content">
+			<input type="checkbox">
+			<label><span class="custom-checkbox"></span></label>
+			<span class="material-symbols-rounded"> delete </span>
+		</div>
+	</template>
+</body>
+
+</html>
