@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Weather app</title>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="styles.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.2/dayjs.min.js"></script>
+	<script src="script.js" defer></script>
+</head>
+
+<body>
+	<div class="app-container">
+		<h1>Weather Forecast</h1>
+		<button class="back-btn" data-back-btn>Back</button>
+		<div class="search-page" data-search-page>
+			<div class="search-box-container">
+				<form class="search-form" data-search-form>
+					<p class="search-info">Invalid Name</p>
+					<input type="text" placeholder="Enter your location" id="search-box" data-search-input>
+					<button class="form-btn search-btn" data-search-btn>SEARCH</button>
+					<p class="or">Or</p>
+					<button class="form-btn get-device-location-btn" data-get-device-location-btn>GET DEVICE
+						LOCATION</button>
+				</form>
+				<div class="loading-container" data-loading-animation>
+					<span class="col"></span>
+					<span class="col"></span>
+					<span class="col"></span>
+					<span class="col"></span>
+					<span class="col"></span>
+					<span class="col"></span>
+				</div>
+			</div>
+		</div>
+		<div class="weather-page" data-weather-page>
+			<div class="left-weather-card">
+				<div class="weather-card-header">
+					<h2 class="header day" data-header-day>Sun</h2>
+					<h2 class="header date" data-header-date>May-15</h2>
+					<h2 class="header location" data-header-location>Shanghai</h2>
+				</div>
+				<div class="weather-card-footer">
+					<img src="//cdn.weatherapi.com/weather/64x64/day/113.png" alt="weather icon" class="weather-icon"
+						data-weather-icon>
+					<h2 class="temperature" data-footer-temp>19&#8451</h2>
+					<h3 class="temperature-info" data-footer-temp-info>Heavy rain</h3>
+				</div>
+			</div>
+			<div class="right-weather-info">
+				<div class="weather-details-container">
+					<div class="weather-details">
+						<span class="details-name">VISIBILITY</span>
+						<span class="details-value" data-visibility>10km</span>
+					</div>
+					<div class="weather-details">
+						<span class="details-name">HUMIDITY</span>
+						<span class="details-value" data-humidity>46%</span>
+					</div>
+					<div class="weather-details">
+						<span class="details-name">WIND</span>
+						<span class="details-value" data-wind>9km/h</span>
+					</div>
+					<div class="weather-details">
+						<span class="details-name">PRECIPITATION</span>
+						<span class="details-value" data-percipitation>0mm</span>
+					</div>
+					<div class="weather-details">
+						<span class="details-name">MAX TEMP</span>
+						<span class="details-value" data-max-temp>19&#8451</span>
+					</div>
+					<div class="weather-details">
+						<span class="details-name">MIN TEMP</span>
+						<span class="details-value" data-min-temp>10&#8451</span>
+					</div>
+				</div>
+				<div class="five-day-forecast-container">
+					<ul class="five-day-forecast-list" data-forecast-ul>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
