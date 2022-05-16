@@ -8,7 +8,7 @@ const forecastUl = document.querySelector("[data-forecast-ul]");
 const searchForm = document.querySelector("[data-search-form]");
 const loadingAnimation = document.querySelector("[data-loading-animation]");
 const searchInfo = document.querySelector(".search-info");
-const baseUrl = "http://api.weatherapi.com/v1";
+const baseUrl = "https://api.weatherapi.com/v1";
 let searchUrl;
 let weatherCollection = [];
 
